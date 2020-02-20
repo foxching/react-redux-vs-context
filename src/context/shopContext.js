@@ -11,11 +11,11 @@ const init = [
   { id: "p4", title: "Half-dried plant", price: 2.99 }
 ];
 const ShopContextProvider = props => {
-  const [products, setProducts] = useState(init);
+  const [products] = useState(init);
 
-  const [carts] = useState([]);
+  const [cart] = useState({ cart: [] });
 
-  const [state, dispatch] = useReducer(shopReducer, { cart: [] });
+  const [state, dispatch] = useReducer(shopReducer, cart);
 
   const addProduct = product => {
     setTimeout(() => {
